@@ -16,6 +16,6 @@ $host = "";
 $password = "";
 
 // Database prefix
-define("PON_PREFIX","pon_");
+define("PON_PREFIX", "pon_");
 
 ?>
