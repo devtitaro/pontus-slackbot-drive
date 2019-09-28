@@ -67,6 +67,7 @@ $q = $db->query("SELECT * FROM ".PON_PREFIX."convo WHERE user_convo = '$email'")
 while($row = $db->fetch_array($q))
 {
  $conversation = $row['user_conversation'];
+ $time = $row['convo_time'];
 ?>
 <div class="card d-flex p-4 text-white">
 <img src="assets/images/disability.svg" alt="user-image" width="50">
@@ -75,6 +76,8 @@ while($row = $db->fetch_array($q))
 // Display user slack conversation
 echo '<p>';
 echo $conversation;
+echo '<br>';
+echo 'Saved: '.$time;
 echo '</p>';
 
 ?>
