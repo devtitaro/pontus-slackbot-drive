@@ -19,7 +19,20 @@ $user = "";
 $host = "";
 $password = "";
 
-$conn = mysqli_connect("$host", "$user", "$password", "$dbname");
+//checking server user credentials
+$link = new mysqli($host,$user,$password);
+if (!$link) {
+	die('Could not connect to the server: ' . mysqli_error($link));
+}
+//selecting db under server permission to check if database be can read and/or written to by the user
+$db_selected = mysqli_select_db($link, $dbname);
+if (!$db_selected) {
+	die('Database not Found in the server : ' . mysqli_error($link));
+}else{
+//making connection
+	$conn = mysqli_connect("$host", "$user", "$password", "$dbname");
+}
+
 class error_report 
 {
     public $error;
