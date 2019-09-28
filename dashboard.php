@@ -62,7 +62,7 @@ if(isset($_SESSION))
 <h3 class="text-grey">Your Saved Slack Messages!</h3>
 <div class="wrapper mt-5 mb-5">
 <?php
-$q = $db->query("SELECT * FROM ".PON_PREFIX."convo WHERE user_convo = '$email' ORDER BY convo_time DESC");
+$q = $db->query("SELECT * FROM ".PON_PREFIX."convo WHERE user_convo = '$email' ORDER BY cid DESC");
 
 while($row = $db->fetch_array($q))
 {
