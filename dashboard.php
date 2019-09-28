@@ -20,9 +20,10 @@ if(isset($_SESSION))
  $username = $_SESSION["username"];
  $email = $_SESSION["email"];
 }
- else
+
+if(!isset($_SESSION["email"]) || !isset($_SESSION["username"]))
 {
- header("location: index.php");
+ header("location: login.php");
 }
 
 ?>
