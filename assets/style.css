@@ -217,6 +217,11 @@ body{
 
 
 
+.benefit-img{
+    border-radius: 50%;
+    width: 20%;
+}
+
 .benefits-col{
     padding: 20px;
 }
