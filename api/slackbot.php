@@ -5,7 +5,6 @@
  * 
  * Details: This file is part of the pontus slackbot file
  * Author: Ugbogu Justice
- * Modified By: titaro
  *
  */
  
