@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="html">
+<html >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,9 +48,7 @@
             </div>
         </div>
         <div class="col-lg-5">
-            <div class="img-block">
-                <img src="assets/images/bg-master.png" width="100%">
-            </div>
+
         </div>
     </div>
 </section>
