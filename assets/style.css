@@ -191,6 +191,32 @@ body{
 }
 
 
+
+
+.benefit-img{
+    border-radius: 50%;
+    width: 20%;
+}
+
+.benefits-col{
+    padding: 20px;
+}
+
+.hero-footer{
+    padding: 15px;
+    box-shadow: 0 25px 4px 0 rgba(0,0,0,.1);
+    background: #0f5d98;
+}
+.hero-footer .btn-primary{
+    width: 20% ;
+    font-size: 18px;
+    padding: 20px;
+}
+.hero-footer .btn-primary i{
+    font-size: 30px;
+
+}
+
 @media only screen and (max-width: 720px) {
 
     .hero2{
@@ -213,19 +239,11 @@ body{
         display: none;
     }
 
-}
+    .hero-footer .btn-primary{
+        width: 70%  ;
+
+    }
 
 
 
-.benefit-img{
-    border-radius: 50%;
-    width: 20%;
-}
-
-.benefits-col{
-    padding: 20px;
-}
-
-.hero-footer{
-    padding: 70px;
 }

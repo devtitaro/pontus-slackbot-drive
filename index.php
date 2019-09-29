@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="assets/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://kit.fontawesome.com/4293d2f86e.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -104,11 +103,10 @@
 
     <div class="container">
 
-        <div class="row justify-content-center" align="center">
-           <div class="col-lg-6 ">
+           <div  align="center">
                <a href="register.php" class="btn btn-block btn-primary"><i class="fab fa-slack"></i> Get Started</a>
            </div>
-        </div>
+
 
     </div>
 
