@@ -48,7 +48,9 @@
             </div>
         </div>
         <div class="col-lg-5">
-
+            <div class="img-block">
+                <img src="assets/images/bg-master.png" width="100%">
+            </div>
         </div>
     </div>
 </section>

@@ -209,6 +209,9 @@ body{
         border-radius: 50%;
     }
 
+    .hero .img-block{
+        display: none;
+    }
 
 }
 
