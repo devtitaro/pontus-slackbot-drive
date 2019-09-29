@@ -250,3 +250,38 @@ body{
 
 
 }
+
+
+
+@media only screen and (max-width: 1500px) and (min-width: 700px) {
+
+    .hero2{
+        padding: 60px 10px;
+    }
+    .img-block{
+        padding: 40px 0;
+    }
+
+    .benefits-col{
+        padding: 0;
+    }
+
+    .benefit-img{
+        width: 50%;
+        border-radius: 50%;
+    }
+
+    [class*="col-"] {
+        width: 50%;
+    }
+
+
+
+    .hero-footer .btn-primary{
+        width: 70%  ;
+
+    }
+
+
+
+}

@@ -12,10 +12,11 @@
     <div class="navbar ">
         <div class="container-fluid">
             <div class="navbar-header">
+
+                <a  class="navbar-brand">Pontus <span>Drive</span></a>
                 <button type="button"  class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <h6>Menu</h6>
                 </button>
-                <a  class="navbar-brand">Pontus <span>Drive</span></a>
             </div>
 
 
