@@ -213,7 +213,7 @@ body{
     padding: 20px;
 }
 .hero-footer .btn-primary i{
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .navbar-toggle{
@@ -243,7 +243,7 @@ body{
     }
 
     .hero-footer .btn-primary{
-        width: 70%  ;
+        width: 100%  ;
 
     }
 
@@ -253,7 +253,7 @@ body{
 
 
 
-@media only screen and (max-width: 1500px) and (min-width: 700px) {
+@media only screen and (max-width: 1000px) and (min-width: 900px) {
 
     .hero2{
         padding: 60px 10px;
