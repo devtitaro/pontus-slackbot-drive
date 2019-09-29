@@ -6,6 +6,8 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:600&display=swap" rel="stylesheet">
     <link href="assets/style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pontus Drive SlackBot</title>
+
 </head>
 <body>
 <header class="top-header" role="banner">
