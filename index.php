@@ -18,10 +18,11 @@
     <div class="navbar ">
         <div class="container-fluid">
             <div class="navbar-header">
+
+                <a  class="navbar-brand">Pontus <span>Drive</span></a>
                 <button type="button"  class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <h6>Menu</h6>
                 </button>
-                <a  class="navbar-brand">Pontus <span>Drive</span></a>
             </div>
 
 
@@ -82,7 +83,7 @@
                 <div class="benefits-col">
                     <div class="benefits-header" align="center">
                        <img class="benefit-img" src="assets/images/storage-icon.jpg" />
-                        <h3>Useful amount of storage</h3>
+                        <h3>Large amount of storage</h3>
                     </div>
                     <div class="benefits-body"  align="center">
                         <p>You don’t have to worry about loosing important data and conversations,

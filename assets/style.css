@@ -214,7 +214,10 @@ body{
 }
 .hero-footer .btn-primary i{
     font-size: 30px;
+}
 
+.navbar-toggle{
+    float: left;
 }
 
 @media only screen and (max-width: 720px) {
