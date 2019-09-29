@@ -190,12 +190,30 @@ body{
     background: #f5f5f5;
 }
 
+
+@media only screen and (max-width: 720px) {
+
+    .hero2{
+        padding: 60px 10px;
+    }
+    .img-block{
+        padding: 40px 0;
+    }
+
+    .benefits-col{
+        padding: 0;
+    }
+
+    .benefit-img{
+        width: 50%;
+        border-radius: 50%;
+    }
+}
+
+
+
 .benefits-col{
     padding: 20px;
-}
-.benefit-img{
-    border-radius: 50%;
-    width: 20%;
 }
 
 .hero-footer{
