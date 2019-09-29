@@ -100,7 +100,19 @@
 
 </section>
 
+<section class="hero-footer">
 
+    <div class="container">
+
+        <div class="row justify-content-center" align="center">
+           <div class="col-lg-6 ">
+               <a href="register.php" class="btn btn-block btn-primary"><i class="fab fa-slack"></i> Get Started</a>
+           </div>
+        </div>
+
+    </div>
+
+</section>
 
 
 </body>
