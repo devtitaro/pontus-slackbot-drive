@@ -128,7 +128,9 @@ function conversation($con_string,$tbl,$tbl_structure,$queryTable){
 	$con_string->query($queryTable);
 }
 
-
+function noSpecialCharacters($string) {
+   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+}
 //Get the request method.
 $requestType = $_SERVER['REQUEST_METHOD'];
 
@@ -182,7 +184,8 @@ function handle_post_request($tbl_users,$con_string,$tbl_users_email_column_name
             	$slack_user_id = $first_2;
             	
             	$conversation_key = trim(str_replace($first, "", $from_get));
-            	$conversation = trim(str_replace("save my convo", "", $conversation_key));//obtained from bot once a message is made by slack user
+            	$conver = trim(str_replace("save my convo", "", $conversation_key));//obtained from bot once a message is made by slack user
+            	$conversation = noSpecialCharacters($conver);
             
     
     //test
