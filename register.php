@@ -79,7 +79,7 @@
                            placeholder="Password here" minLength="5" required/>
                 </div>
                 <div class="form-group">
-                    <button type="submit" name="login"  class="btn btn-primary btn-block">Sign In</button>
+                    <button type="submit" name="submit"  class="btn btn-primary btn-block">Continue</button>
                 </div>
                 <hr class="styled-hr">
                 <div class="" align="center">
