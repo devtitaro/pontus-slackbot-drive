@@ -43,9 +43,8 @@
             <div class="hero-heading">
                 <h2 class="">A better way to organize and share data within slack</h2>
                 <br>
-                <p class="font-weight-bold" style="color: #7e7e7e">HNG SLACKBOT is built of sharing sharing knowledge
-                    and productive collaborations. SLACKBOT is built of sharing sharing knowledge and prodSLACKBOT is
-                    built of sharing sharing knowledge and prod</p>
+                <p class="font-weight-bold" style="color: #7e7e7e">Pontus slack drive, is built to help you store your slack messages
+                    for productive collaborations. It automatically saves conversations to our drive and easy to access.</p>
             </div>
         </div>
         <div class="col-lg-5">
@@ -102,11 +101,5 @@
 </section>
 
 
-<section class="hero-footer">
-    <div class="container m-0">
-
-
-    </div>
-</section>
 </body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script></html>
