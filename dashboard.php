@@ -6,6 +6,7 @@
  * Details: This file is part of the pontus slackbot file
  * Author: @officialozioma
  * Modified By: @titaro
+ * Modified By: @Josef
  *
  */
 
@@ -69,6 +70,7 @@ while($row = $db->fetch_array($q))
 {
  $conversation = $row['user_conversation'];
  $time = $row['convo_time'];
+ $id = $row['cid'];
 ?>
 <div class="card d-flex p-4 text-white">
 <img src="assets/images/disability.svg" alt="user-image" width="50">
@@ -79,6 +81,10 @@ echo '<p>';
 echo $conversation;
 echo '<br>';
 echo 'Saved: '.$time;
+echo '</p>';
+echo '<p>';
+echo '<span><a href="edit_conversation.php?id='.$id.'" class="btn btn-primary">Edit Conversation</a></span>';
+echo '<span><a href="delete_conversation.php?id='.$id.'" title="delete conversation" class="btn btn-danger">Delete Conversation</a></span>';
 echo '</p>';
 
 ?>
