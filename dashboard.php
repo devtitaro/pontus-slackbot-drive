@@ -80,6 +80,9 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
 
                            <?php
                         $q = $db->query("SELECT * FROM " . PON_PREFIX . "convo WHERE user_convo = '$email' ORDER BY cid DESC");
+                        if($q->num_rows<1){
+                        $db->query("INSERT INTO " . PON_PREFIX . "convo(`user_convo`, `user_conversation`) VALUES('$email','Testing dashboard without bot response')");
+                        }
                         if ($q->num_rows>0) {
                            
                         while ($row = $db->fetch_array($q)) {
