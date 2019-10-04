@@ -6,6 +6,7 @@
  * Details: This file is part of the pontus slackbot file
  * Author: @officialozioma
  * Modified By: @titaro
+ * Modified By: @Josef
  *
  */
 
@@ -84,6 +85,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                         while ($row = $db->fetch_array($q)) {
                             $conversation = $row['user_conversation'];
                             $time = $row['convo_time'];
+                            $id = $row['cid'];
                             ?>
                             
                                
@@ -103,8 +105,10 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                                     </div>
                                     <div class="col-lg-3 icon-pack" align="right">
                                         <i class="fa fa-star yellow"></i>
-                                        <i class="fa fa-star yellow"></i>
-                                        <i class="fa fa-trash"></i>
+                                        <i class="fa fa-star yellow"></i> <?php
+                                        echo '<a href="edit_conversation.php?id='.$id.'" title="edit conversation" class="btn btn-primary"><i class="fa fa-edit"></i></a>';
+                                        echo '<a href="delete_conversation.php?id='.$id.'" title="delete conversation" class="btn btn-danger"><i class="fa fa-trash"></i></a>'; 
+                                        ?>
                                     </div>
                                 </div>
                                 <br>
