@@ -6,9 +6,24 @@
         <link rel="stylesheet" href="FAQ.css">
         <title>Pontus Slackbot FAQ</title>
     </head>
-    <body bgcolor="cyan" align="left">
-        <font face="cambria", size="4.5">
-            <a href="register.php">Back to the Signup page</a>
+    <body align="left">
+        <font face="candara", size="3.5">
+            <header class="top-header" role="banner">
+    <div class="navbar ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a  class="navbar-brand">Pontus <span>Drive</span></a>
+                <button type="button"  class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <h6>Menu</h6>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse offset" id="navbar">
+                <ul class="nav navbar-nav justify-content-end">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
+                    <li class="nav-item"><a href="login.php" class="nav-link">Login</a> </li>
+                    <li class="nav-item"><a href="register.php" class="nav-link">Sign up</a> </li>
+                     <li class="nav-item"><a href="about.php" class="nav-link">About us</a> </li>
+         
             <br/>
            <div class="grid">
                <div>
