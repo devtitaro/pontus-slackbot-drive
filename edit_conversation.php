@@ -27,9 +27,9 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
 <?php
 // getting the query string id from the dashboard page
 $id = $_GET['id'];
-
+$table = "pon_convo";
 // querying the database
-$q = $db->query("SELECT * FROM ".PON_PREFIX."convo WHERE WHERE cid = '$id'");
+$q = $db->query("SELECT * FROM $table WHERE WHERE `cid` = '$id'");
 
 // fetching row from database
 while($row = $db->fetch_array($q))
@@ -100,12 +100,13 @@ while($row = $db->fetch_array($q))
                                 if(isset($_POST['msg'])){
                                     $id = $_POST['id'];
                                     $convo = $_POST['conversation'];
+                                    $table = "pon_convo";
 
-                                    if(!empty($convo)){
-                                        $query = "UPDATE ".PON_PREFIX."convo SET user_conversation='".mysqli_real_escape_string($convo)."' WHERE cid = '$id'";
+                                    if(!empty(mysqli_real_escape_string($convo))){
+                                        $query = "UPDATE $table SET user_conversation='$convo' WHERE `cid` = '$id'";
 
-                                        $query_update = mysqli_query($db, $query);
-                                        if ($query_update = TRUE) {
+                                       
+                                        if ($db->query($query)) {
                                             header("location:dashboard.php");  
                                         }
                                         else{
