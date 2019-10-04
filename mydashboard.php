@@ -57,8 +57,6 @@
                                         <div class="spacer"></div>
                                     </div>
                                     <div class="col-lg-3 icon-pack" align="right">
-                                        <i class="fa fa-star yellow"></i>
-                                        <i class="fa fa-star yellow"></i>
                                         <i class="fa fa-trash"></i>
                                     </div>
                                 </div>
@@ -89,8 +87,6 @@
                                         <div class="spacer"></div>
                                     </div>
                                     <div class="col-lg-3 icon-pack" align="right">
-                                        <i class="fa fa-star yellow"></i>
-                                        <i class="fa fa-star yellow"></i>
                                         <i class="fa fa-trash"></i>
                                     </div>
                                 </div>
@@ -120,9 +116,7 @@
                                     <div class="col-lg-4">
                                         <div class="spacer"></div>
                                     </div>
-                                    <div class="col-lg-3 icon-pack" align="right">
-                                        <i class="fa fa-star yellow"></i>
-                                        <i class="fa fa-star yellow"></i>
+                                    <div class="col-lg-3 icon-pack" align="right"
                                         <i class="fa fa-trash"></i>
                                     </div>
                                 </div>
