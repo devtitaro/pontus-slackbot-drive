@@ -29,6 +29,7 @@
                     <li class="nav-item"><a href="login.php" class="nav-link">Login</a> </li>
                     <li class="nav-item"><a href="register.php" class="nav-link">Sign up</a> </li>
                     <li class="nav-item"><a href="about.php" class="nav-link">About us</a> </li>
+                    <li class="nav-item"><a href="FAQ.php" class="nav-link">FAQ</a> </li>
                 </ul>
             </div>
         </div>
@@ -87,8 +88,7 @@
                 <hr class="styled-hr">
                 <div class="" align="center">
                     <h4 class="bottomH">Already Have An Account? <a href="login.php">Sign In Here</a></h4>
-                    <br/>
-                    <a href="FAQ.php">Frequently Asked Questions</a>
+                  
                 </div>
             </form>
         </div>
