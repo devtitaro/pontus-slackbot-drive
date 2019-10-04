@@ -53,8 +53,8 @@ if(isset($_POST) && isset($sub))
 
   // Delete the registration pages if user has logged in we don't want multiple admin accounts
   // This might change in the future but for now we delete the files
-  //unlink("./register.php");
-  //unlink("./reg.php");
+  unlink("./register.php");
+  unlink("./reg.php");
  }
   else
  {
