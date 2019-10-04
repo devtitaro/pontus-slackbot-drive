@@ -1,16 +1,4 @@
-
-/**
- * 
- */
-
-/**
- * Pontus Slackbot
- *
- * Details: This file is part of the pontus slackbot file
- * Author: Ugbogu Justice
- * 
- */
- *{margin: 0px; padding: 0px;  font-family: Helvetica, Arial, sans-serif;}
+*{margin: 0px; padding: 0px;  font-family: Helvetica, Arial, sans-serif;}
 .w ul{
     list-style: none;
     margin: 0;
@@ -307,4 +295,5 @@ box-shadow: 0 3px 0 #0cb2c1;
 -webkit-transform:rotate(180deg);
 -o-transform:rotate(180deg);
 -ms-transform:rotate(180deg);
+
 }

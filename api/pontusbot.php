@@ -12,15 +12,12 @@
  */
  // Lets include some important files here
 
-$dbname = "ikhgynl5yi6ppldx";
-$user = "jse831u4uvmhykrg";
-$host = "s9xpbd61ok2i7drv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-$password = "ji7u73u42vplhnzb";
 
-// $dbname = "swift_team";
-// $user = "root";
-// $host = "localhost";
-// $password = "";
+
+$dbname = "";
+$user = "root";
+$host = "localhost";
+$password = "";
 
 
 $db = mysqli_connect("$host", "$user", "$password", "$dbname");
@@ -85,8 +82,17 @@ class bot
 			$getStatus = explode("-", $this->test);
 			$count_getstatus = count($getStatus);
 			if ($count_getstatus > 1) {
-				$this->mysqli->query("DELETE  FROM $this->tbl_con WHERE  `user_convo` = '$this->email'");
-				return ["Cleaning all your Conversation...",$this->username.", your conversation has been cleared"];
+
+				// making checks
+				$making_checks = $this->mysqli->query("SELECT * FROM $this->tbl_con WHERE  `user_convo` = '$this->email'");
+				$count_making_checks = $making_checks->num_rows;
+				if ($count_making_checks > 0 ) {
+
+					$this->mysqli->query("DELETE  FROM $this->tbl_con WHERE  `user_convo` = '$this->email'");
+					return ["Cleaning all your Conversation...",$this->username.", your conversation has been cleared"];
+				}else{
+					return ["Searching  Conversations...",$this->username.", no conversation was found for this date range"];
+				}
 			}else{
 				return  ["none","Nothing to process, Follow the format given to you when you type help. E.g D-all"];
 			}
@@ -107,8 +113,16 @@ class bot
 				}else{
 					$date = $this->chatDelete(- $status, "-");
 				}
-				$this->mysqli->query("DELETE  FROM $this->tbl_con WHERE `convo_time` = '%$date%' AND  `user_convo` LIKE '$this->email' ");
-				return ["Cleaning  conversation ...",$this->username.", your Conversation Cleared"];
+				// making checks
+				$making_checks = $this->mysqli->query("SELECT * FROM $this->tbl_con WHERE  `user_convo` = '$this->email'");
+				$count_making_checks = $making_checks->num_rows;
+				if ($count_making_checks > 0 ) {
+
+					$this->mysqli->query("DELETE  FROM $this->tbl_con WHERE `convo_time` = '%$date%' AND  `user_convo` LIKE '$this->email' ");
+					return ["Cleaning  conversation ...",$this->username.", your Conversation Cleared"];
+				}else{
+					return ["Searching  Conversations...",$this->username.", no conversation was found for this date range"];
+				}
 			}else{
 				return  ["none","Nothing to process, Follow the format given to you when you type help. E.g Delx-five-years-ago"];
 			}
@@ -302,3 +316,4 @@ if ($checkt) {
           </ul>
         </div>
 </div>
+

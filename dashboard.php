@@ -1,12 +1,13 @@
+
+
 <?php
 
 /**
  * Pontus Slackbot
- * 
+ *
  * Details: This file is part of the pontus slackbot file
  * Author: @officialozioma
  * Modified By: @titaro
- * Modified By: @Josef
  *
  */
 
@@ -63,6 +64,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
 
         <div class="row">
             <div class="sidebar col-lg-2">
+
                 <a class="active" href="#homeLink" onclick="showConversation()" id="homeLink"><?php echo ucfirst($username); ?></a>
                 <a href="dashboard.php">Conversations</a>
                 <a href="javascript:;" onclick="showProfile()" id="profileLink">Profile Settings</a>
@@ -70,6 +72,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
             </div>
 
             <div class="page-content col-lg-10  d-flex justify-content-center" id="page-append">
+
                 <div class="col-sm-9">
                     <div class="p-4">
                         <h4>Recent Conversations</h4>
@@ -85,7 +88,9 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                         while ($row = $db->fetch_array($q)) {
                             $conversation = $row['user_conversation'];
                             $time = $row['convo_time'];
+
                             $id = $row['cid'];
+
                             ?>
                             
                                
@@ -105,10 +110,10 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                                     </div>
                                     <div class="col-lg-3 icon-pack" align="right">
                                         <i class="fa fa-star yellow"></i>
-                                        <i class="fa fa-star yellow"></i> <?php
-                                        echo '<a href="edit_conversation.php?id='.$id.'" title="edit conversation" class="btn btn-primary"><i class="fa fa-edit"></i></a>';
-                                        echo '<a href="delete_conversation.php?id='.$id.'" title="delete conversation" class="btn btn-danger"><i class="fa fa-trash"></i></a>'; 
-                                        ?>
+
+                                        <i class="fa fa-star yellow"><a href="edit_conversation.php?<?php echo 'id='.$id;?>" class="btn btn-primary">Edit Conversation</a></i>
+                                        <i class="fa fa-trash"><a href="delete_conversation.php?<?php echo 'id='.$id;?>" title="delete conversation" class="btn btn-danger">Delete Conversation</a></i>
+
                                     </div>
                                 </div>
                                 <br>
@@ -198,6 +203,7 @@ $('#show').click(function(){
     $('#case_hole').slideToggle();
 });
 
+
     // functionality added to profile by Joshua
     const showProfile = () => {
         //    e.preventDefault();
@@ -253,3 +259,4 @@ $('#show').click(function(){
       
        }
 </script>
+
