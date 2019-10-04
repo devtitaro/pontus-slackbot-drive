@@ -31,22 +31,22 @@
 
     </header>
 
-        <div class="row">
+        <div class="row" >
             <div class="sidebar col-lg-2">
-                <a class="active" href="#home">My Dashboard</a>
-                <a href="mydsahboard.html">Conversations</a>
-                <a href="javascript:;" onclick="callPage()">Profile Settings</a>
+                <a class="active" href="#home" onclick="showDashboard()" id="homeLink">My Dashboard</a>
+                <a href="javascript:;" onclick="showConversation()" id="dashboardLink">Conversations</a>
+                <a href="javascript:;" onclick="showProfile()" id="profileLink">Profile Settings</a>
                 <a href="logout.html">Log Out</a>
             </div>
 
-            <div class="page-content col-lg-10  d-flex justify-content-center">
+            <div class="page-content col-lg-10  d-flex justify-content-center" id="page-append">
                 <div class="col-sm-9">
                     <div class="p-4">
                         <h4>Recent Conversations</h4>
                         <hr>
                     </div>
 
-                    <div class="row" id="page-append">
+                    <div class="row" >
                         <div class="convo-section">
                             <div class="title-heading">
                                 <div class="row">
@@ -162,7 +162,7 @@
 <script>
      
     
-       const callPage = () => {
+       const showProfile = () => {
         //    e.preventDefault();
         $.ajax({
             url: "profile.html",
@@ -171,6 +171,9 @@
             success: function(res) {
                 console.log('This page was loaded', res);
                 $("#page-append").html(res);
+                $("#homeLink").removeClass("active");
+                $("#dashboardLink").removeClass("active");
+                $("#profileLink").addClass("active");
             },
             error: function(err) {
                 console.log("This page was not loaded", err);
@@ -180,6 +183,58 @@
             }
         })
        }
+
+       const showConversation = () => {
+        $("#homeLink").removeClass("active");
+                $("#dashboardLink").addClass("active");
+                $("#profileLink").removeClass("active");
+        //    e.preventDefault();
+        // $.ajax({
+        //     url: "conversation.html",
+        //     type: "GET",
+        //     dataType: "text",
+        //     success: function(res) {
+        //         console.log('This page was loaded', res);
+        //         $("#page-append").html(res);
+        //         $("#homeLink").removeClass("active");
+        //         $("#dashboardLink").addClass("active");
+        //         $("#profileLink").removeClass("active");
+        //     },
+        //     error: function(err) {
+        //         console.log("This page was not loaded", err);
+        //     },
+        //     complete: function(xhr, status) {
+        //         console.log("The requet is complete");
+        //     }
+        // })
+       }
+
+       const showDashboard = () => {
+        $("#homeLink").addClass("active");
+                $("#dashboardLink").removeClass("active");
+                $("#profileLink").removeClass("active");
+        //    e.preventDefault();
+        // $.ajax({
+        //     url: "conversation.html",
+        //     type: "GET",
+        //     dataType: "text",
+        //     success: function(res) {
+        //         console.log('This page was loaded', res);
+        //         $("#page-append").html(res);
+        //         $("#homeLink").addClass("active");
+        //         $("#dashboardLink").removeClass("active");
+        //         $("#profileLink").removeClass("active");
+        //     },
+        //     error: function(err) {
+        //         console.log("This page was not loaded", err);
+        //     },
+        //     complete: function(xhr, status) {
+        //         console.log("The requet is complete");
+        //     }
+        // })
+       }
+
+       
    
     
 </script>
