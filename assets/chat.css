@@ -1,0 +1,310 @@
+
+/**
+ * 
+ */
+
+/**
+ * Pontus Slackbot
+ *
+ * Details: This file is part of the pontus slackbot file
+ * Author: Ugbogu Justice
+ * 
+ */
+ *{margin: 0px; padding: 0px;  font-family: Helvetica, Arial, sans-serif;}
+.w ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+ .w ul li{
+    display: inline-block;
+    clear: both;
+    padding: 20px;
+    border-radius: 30px;
+    margin-bottom: 2px;
+    white-space: pre-wrap;    
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+}
+.chat-time-me,.chat-time-him{
+     float: right;
+    margin-right:40%;
+    font-size: 15px;
+    -moz-transform:rotate(180deg);
+}
+
+.chat-photo{
+    float: right;
+    margin-right:-15px;
+    margin-top: -50px;
+    margin-left: 10px;
+    position: relative;
+    -moz-transform:rotate(180deg);
+    
+}
+
+.him{
+
+    background-color: #eee;
+    float: right;
+    margin-right:40px;
+    text-align: left;
+    font-size: 15px;
+    position: relative;
+    /*wrapping*/
+    max-width: 600px;
+word-wrap: break-word;
+/*changing direction of text (left to right=ltr and right to left=rtl)*/
+    direction: ltr;
+    
+}
+.me{
+  /*wrapping*/
+  max-width: 600px;
+  word-wrap: break-word;
+  text-align: left;
+    float: left;
+    background-color: #0084ff;
+    color: #fff;
+    margin-left: 8px;
+    font-size: 15px;
+ /*changing direction of text (left to right=ltr and right to left=rtl)*/
+    direction: ltr;
+}
+
+#hidehere{
+  overflow-y: hidden  !important;
+}
+
+.chatlogsall{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  direction: rtl;
+  -moz-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  filter:progid:DXImageTransform.Microsoft.BaseImage(rotation=2);
+}
+
+.chat-photo +  .chat-time-me + .me{
+    border-bottom-right-radius: 5px;
+}
+.chat-time-me + .me + .chat-time-me + .me{
+   border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.me:last-of-type{
+    border-bottom-right-radius: 30px;
+}
+
+.me + .chat-time-me{
+   display: none;
+}
+.chat-photo + .chat-time-him{
+   display: none;
+}
+
+
+.chat-time-him + .him + .chat-photo + .chat-time-him + .him + .chat-photo{
+    display: none;
+}
+#hidehere::-webkit-scrollbar{
+    width: 0px;
+}
+
+#case_hole{
+height: 100vh !important;
+position: fixed;
+right: 0;
+/*margin-right: 10px;*/
+bottom: 8vh !important;
+}
+/*oldStyle*/
+.chatbox{
+/*display: none;*/
+width: 97.5% !important;
+height: 100vh;
+background-color: #2f323a;
+padding-left: 10px;
+padding-bottom: 25px;
+margin: 10px auto;
+margin-left: 1px;
+margin-top: 0px;
+box-shadow: 0 3px black;
+border-radius: 15px 15px 0px   0px;
+}
+
+@media only screen and (max-width: 260px) {
+    .chatbox{
+      width: 260px;
+      /*margin-right:10px  !important;*/
+    }
+    .chat-from textarea{
+      width: 100px !important;
+    }
+   
+    
+}
+@media only screen and (max-width: 720px)  and (min-width: 520px){
+    .chat-from textarea{
+      width: 250px !important;
+    }
+   
+   
+}
+@media only screen and (max-width: 520px)  and (min-width: 281px){
+  .chat-from textarea{
+    width: 200px !important;
+  }.chat-from a{
+    width: 100px !important;
+  }
+  .chatlogs{
+    height: 78vh !important;
+    }
+    .chatlogsall{
+        height: 78vh !important;
+    }
+}
+.chatlogs{
+padding: 10px;
+width:100%;
+height: 92vh;
+overflow-x: hidden;
+
+}
+
+.chatlogsall{
+padding: 10px;
+width:100%;
+height: 92vh;
+overflow-x: hidden;
+
+}
+
+.chatlogsall::-webkit-scrollbar{
+width: 10px !important;
+cursor: pointer !important;
+}
+.chatlogs,.chatlogsall::-webkit-scrollbar-thumb{
+border-radius: 5px !important;
+background: green !important;
+cursor: pointer !important;
+}
+.chat{
+display: flex;
+flex-flow: row wrap;
+align-items: flex-start;
+margin-bottom: 10px;
+}
+.chat-from{
+margin-top: -10px;
+display: flex;
+align-items: flex-start;
+
+}
+.chat-from textarea:keyup{
+background: rgba(0,0,0,.1);
+}
+.chat-from textarea:focus{
+background: #ccc;
+}
+.chat-from textarea{
+ 
+border-bottom-right-radius: 25px;
+border-bottom-left-radius: 25px;
+border-top-left-radius: 25px;
+border-top-right-radius: 25px;
+background: #fbfbfb;
+width: 70%;
+height: 70px;
+margin-left: 5%;
+border: 2px solid black;
+resize: none;
+padding: 10px;
+padding-top: 25px;
+padding-left: 30px;
+font-size: 18px;
+color: #333;
+word-break: break-all;
+
+}
+#hidehere::-webkit-scrollbar{
+    width: 0px !important;
+}
+.chat-from textarea::-webkit-scrollbar{
+width: 10px;
+
+}
+.chat-from textarea::-webkit-scrollbar-thumb{
+border-radius: 5px;
+cursor: pointer;
+background: rgba(0,0,0,.1);
+}
+.chat-from textarea:focus{
+background: #fff;
+}
+
+.chat-from a{
+width: 20%;
+height:50px;
+background: #1ddced;
+padding: 5px 15px;
+margin-top: 10px;
+text-align: center;
+font-size: 30px;
+color: #fff;
+border: none;
+margin: 0 10px;
+border-radius: 3px;
+box-shadow: 0 3px 0 #0cb2c1;
+cursor: pointer;
+-webkit-transition: background .2s ease;
+-moz-transition: background .2s ease;
+-o-transition: background .2s ease;
+}
+#show{
+width: 100%;
+height:50px;
+background: rgb(109, 111, 222);
+padding: 5px 15px;
+margin-top: 1px;
+text-align: center;
+font-size: 30px;
+color: #fff;
+border: none;
+border-radius: 3px;
+box-shadow: 0 3px 0 #0cb2c1;
+cursor: pointer;
+-webkit-transition: background .2s ease;
+-moz-transition: background .2s ease;
+-o-transition: background .2s ease;
+position: fixed;
+bottom: 0;
+}
+.chat-from a:hover{
+background: #13c8d9;
+}
+.name{
+border:none;background: black;color: green;
+}
+.reciever_chat {
+height: 130px;
+padding: 5px 15px;
+color: #fff;
+border: none;
+margin-top: 8px;
+float: left;
+margin-left: -70px;
+border-radius: 3px;
+box-shadow: 0 3px 0 #0cb2c1;
+ -moz-transform:rotate(180deg);
+-webkit-transform:rotate(180deg);
+-o-transform:rotate(180deg);
+-ms-transform:rotate(180deg);
+}
