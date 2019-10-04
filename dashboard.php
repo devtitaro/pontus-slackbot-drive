@@ -202,7 +202,7 @@ $('#show').click(function(){
     const showProfile = () => {
         //    e.preventDefault();
         $.ajax({
-            url: "profile.html",
+            url: "profile.php",
             type: "GET",
             dataType: "text",
             success: function(res) {
