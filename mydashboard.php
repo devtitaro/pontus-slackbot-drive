@@ -165,7 +165,7 @@
        const showProfile = () => {
         //    e.preventDefault();
         $.ajax({
-            url: "profile.html",
+            url: "profile.php",
             type: "GET",
             dataType: "text",
             success: function(res) {
@@ -220,7 +220,7 @@
         //     dataType: "text",
         //     success: function(res) {
         //         console.log('This page was loaded', res);
-        //         $("#page-append").html(res);
+        //         $("#page-append").php(res);
         //         $("#homeLink").addClass("active");
         //         $("#dashboardLink").removeClass("active");
         //         $("#profileLink").removeClass("active");
