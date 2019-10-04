@@ -137,9 +137,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                             }
                         }
                         $q = $db->query("SELECT * FROM " . PON_PREFIX . "convo WHERE user_convo = '$email' ORDER BY cid DESC");
-                        if($q->num_rows<1){
-                        $db->query("INSERT INTO " . PON_PREFIX . "convo(`user_convo`, `user_conversation`) VALUES('$email','Testing dashboard without bot response')");
-                        }
+                       
                         if ($q->num_rows>0) {
                            
                         while ($row = $db->fetch_array($q)) {
@@ -163,11 +161,9 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                                     <div class="col-lg-4">
                                         <div class="spacer"></div>
                                     </div>
-                                    <div class="col-lg-3 icon-pack" align="right">
-                                        <i class="fa fa-star yellow"></i>
-                                        <i class="fa fa-star yellow"></i> <?php
-                                        echo '<a href="edit_conversation.php?id='.$id.'" title="edit conversation" class="btn btn-primary"><i class="fa fa-edit"></i></a>';
-                                        echo '<a href="delete_conversation.php?id='.$id.'" title="delete conversation" class="btn btn-danger"><i class="fa fa-trash"></i></a>'; 
+                                    <div class="col-lg-3 icon-pack" align="right"> <?php
+                                        echo '<a href="edit_conversation.php?id='.$id.'" title="edit conversation" class="">Edit</a>';
+                                        echo '<a href="delete_conversation.php?id='.$id.'" title="delete conversation" class=""><i class="fa fa-trash"></i></a>'; 
                                         ?>
                                     </div>
                                 </div>
@@ -182,9 +178,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
 
                             </div>
                             <hr>
-                            <div class="controls" align="right">
-                                <a href="" class="btn btn-warning">Add to favourites</a>
-                            </div>
+                            
 
                         </div>
                         <?php
@@ -200,8 +194,6 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                                         <div class="spacer"></div>
                                     </div>
                                     <div class="col-lg-3 icon-pack" align="right">
-                                        <i class="fa fa-star yellow"></i>
-                                        <i class="fa fa-star yellow"></i>
                                         <i class="fa fa-trash"></i>
                                     </div>
                                 </div>
