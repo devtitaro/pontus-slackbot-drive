@@ -98,3 +98,18 @@ body {
     }
   }
    
+  /* Added By Joshua */
+  .image-upload i.fa-camera
+    {   
+        font-size: 20px;
+        cursor: pointer;
+        color: #6D6FD4;
+        /* float: right; */
+    }
+
+    .image-upload > input
+    {
+        display: none;
+    }
+
+  /* End of styling */
