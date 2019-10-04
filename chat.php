@@ -158,7 +158,7 @@ if ($checkt) {
       }
       
       xmlhttp.open('GET','api/pontusbot.php?msg='+msg+'&csrf_field='+csrf+'&tbl='+tbl,true);
-      xmlhttp.send;
+      xmlhttp.send();
         $(".msg").val('');
       }
 
