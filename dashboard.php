@@ -25,6 +25,8 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
     header("location: login.php");
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +52,14 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
             </div>
 
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search Coversations..">
+                <form method="POST" action="">
+                <input type="text" class="form-control" placeholder="Search Coversations.." name="search">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
+                    <button class="btn btn-default" type="button" name="submit_search">
                         <span class="fa fa-search"></span>
                     </button>
                 </span>
+                </form>
             </div>
         </div>
 
@@ -79,6 +83,59 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                     <div class="row">
 
                            <?php
+                        if(isset($_POST['submit_search']){
+                            $search_key = $_POST['search'];
+                            if(!empty($search_key)){
+                                $making_checks = $db->query("SELECT * FROM pon_convo WHERE  `user_conversation` LIKE '%$search_key%'");
+                                if($making_checks->num_rows > 0){
+                                     while ($row_search = $db->fetch_array($making_checks)) {
+                                          $conversation_search = $row_search['user_conversation'];
+                                          $time_search = $row_search['convo_time'];
+                                          $id_search = $row_search['cid'];
+                        ?>
+                                            <div class="convo-section">
+                            <div class="title-heading">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <h5><span class="fa fa-clock-o"> </span> <?php
+
+                                // Display user slack conversation
+                                echo '<p>';
+                                echo $time_search;?></h5>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="col-lg-3 icon-pack" align="right">
+                                        <i class="fa fa-star yellow"></i>
+                                        <i class="fa fa-star yellow"></i> <?php
+                                        echo '<a href="edit_conversation.php?id='.$id_search.'" title="edit conversation" class="btn btn-primary"><i class="fa fa-edit"></i></a>';
+                                        echo '<a href="delete_conversation.php?id='.$id_search.'" title="delete conversation" class="btn btn-danger"><i class="fa fa-trash"></i></a>'; 
+                                        ?>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="convo-text">
+                                <p><?php
+
+                                // Display user slack conversation
+                                echo '<p>';
+                                echo $conversation_search;?></p>
+
+                            </div>
+                            <hr>
+                            <div class="controls" align="right">
+                                <a href="" class="btn btn-warning">Add to favourites</a>
+                            </div>
+
+                        </div>
+                        <?php
+                                   
+                                     }
+                                }
+                            }
+                        }
                         $q = $db->query("SELECT * FROM " . PON_PREFIX . "convo WHERE user_convo = '$email' ORDER BY cid DESC");
                         if($q->num_rows<1){
                         $db->query("INSERT INTO " . PON_PREFIX . "convo(`user_convo`, `user_conversation`) VALUES('$email','Testing dashboard without bot response')");
