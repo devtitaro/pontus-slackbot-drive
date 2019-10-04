@@ -87,6 +87,8 @@
                 <hr class="styled-hr">
                 <div class="" align="center">
                     <h4 class="bottomH">Already Have An Account? <a href="login.php">Sign In Here</a></h4>
+                    <br/>
+                    <a href="FAQ.php">Frequently Asked Questions</a>
                 </div>
             </form>
         </div>
