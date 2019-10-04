@@ -1,0 +1,210 @@
+.sto
+{
+ margin: 0 auto;
+ text-align: center;
+ padding: 20px;
+}
+
+.error
+{
+ background-color: rgba(255, 0, 0, 0.4);
+ padding: 15px;
+ color: #fff;
+ margin: -30px -30px 10px -30px;
+ text-align: center;
+}
+
+.success
+{
+ background-color: rgba(0, 255, 0, 0.4);
+ padding: 15px;
+ color: #fff;
+ margin: -30px -30px 10px -30px;
+ text-align: center;
+}
+
+input
+{
+ margin: 10px auto;
+}
+
+h5
+{
+ text-align: center;
+}
+
+h5 a
+{
+ color: black;
+}
+
+input[type="text"], input[type="password"]
+{
+ background-color: rgba(255, 255, 255, 0.5);
+ padding: 20px;
+ width: 100%;
+ border-radius: 10px;
+ box-sizing: border-box;
+ border: none;
+}
+
+input[type="submit"]
+{
+ background-color: #000;
+ padding: 20px;
+ width: 100%;
+ border: none;
+ border-radius: 10px;
+ color: #fff;
+}
+
+@media only screen and (min-width: 700px)
+{
+body
+{
+ margin: 0;
+ padding: 0;
+ background-color: #f9f9f9;
+ background-image: url("../images/pattern.png");
+ background-repeat: repeat;
+ background-position: left top;
+ background-attachment: scroll;
+}
+
+.logo
+{
+ padding: 40px;
+ background-color: rgba(0, 128, 128, 0.5);
+}
+
+header h4
+{
+ background-color: rgba(47, 53, 64, 0.8);
+ color: #fff;
+ text-align: center;
+ padding: 30px;
+ box-shadow: 0 5px 5px rgba(66, 47, 47, 0.3);
+}
+
+.details
+{
+ background-color: rgba(15, 0, 0, 0.4);
+ padding: 25px;
+ box-align: 0 0 5px #a9a9a9;
+ width: 70%;
+ margin: 0 auto;
+ margin-top: 60px;
+ border-radius: 10px 10px 0 0;
+ clear: both;
+}
+
+.details-2
+{
+ background-color: rgba(0, 128, 128, 0.4);
+ padding: 30px;
+ color: #fff;
+ width: 70%;
+ margin: 0 auto;
+ margin-bottom: 60px;
+ border-radius: 0 0 10px 10px;
+}
+
+.details h5
+{
+ text-align: center;
+ color: #1b1a1a;
+}
+
+.footer
+{
+ box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+ padding: 30px;
+ background-color: rgba(0, 128, 128, 0.5);
+ text-align: center;
+}
+
+.footer span
+{
+ color: #fff;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+ padding: 10px;
+ border-radius: 10px;
+ text-align: center;
+}
+}
+
+@media only screen and (max-width: 699px)
+{
+body
+{
+ margin: 0;
+ padding: 0;
+ background-color: #f9f9f9;
+ background-image: url("../images/pattern.png");
+ background-repeat: repeat;
+ background-position: left top;
+ background-attachment: scroll;
+}
+
+.logo
+{
+ padding: 30px;
+ background-color: rgba(0, 128, 128, 0.5);
+ text-align: center;
+}
+
+header h4
+{
+ background-color: rgba(47, 53, 64, 0.8);
+ color: #fff;
+ text-align: center;
+ padding: 30px;
+ box-shadow: 0 5px 5px rgba(66, 47, 47, 0.3);
+}
+
+.details
+{
+ background-color: rgba(15, 0, 0, 0.4);
+ padding: 25px;
+ box-align: 0 0 5px #a9a9a9;
+ width: 90%;
+ margin: 0 auto;
+ margin-top: 60px;
+ border-radius: 10px 10px 0 0;
+ clear: both;
+}
+
+.details-2
+{
+ background-color: rgba(0, 128, 128, 0.4);
+ padding: 30px;
+ color: #fff;
+ width: 90%;
+ margin: 0 auto;
+ margin-bottom: 60px;
+ border-radius: 0 0 10px 10px;
+}
+
+.details h5
+{
+ text-align: center;
+ color: #1b1a1a;
+}
+
+.footer
+{
+ box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+ padding: 30px;
+ background-color: rgba(0, 128, 128, 0.5);
+ text-align: center;
+}
+
+.footer span
+{
+ color: #fff;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+ padding: 10px;
+ border-radius: 10px;
+ text-align: center;
+}
+}

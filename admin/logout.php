@@ -12,7 +12,12 @@
 session_start();   
 session_destroy();
 
+// Incase sessison destroy disappoints me
+unset($_SESSION["aid"]);
+unset($_SESSION["email"]);
+unset($_SESSION["username"]);
+
 // Redirect to index page after logout
-header("location: index.html");
+header("location: index.php");
 
 ?>
