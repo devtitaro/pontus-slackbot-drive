@@ -35,7 +35,7 @@
             <div class="sidebar col-lg-2">
                 <a class="active" href="#home">My Dashboard</a>
                 <a href="mydsahboard.html">Conversations</a>
-                <a href="profile.html">Profile Settings</a>
+                <a href="javascript:;" onclick="callPage()">Profile Settings</a>
                 <a href="logout.html">Log Out</a>
             </div>
 
@@ -46,7 +46,7 @@
                         <hr>
                     </div>
 
-                    <div class="row">
+                    <div class="row" id="page-append">
                         <div class="convo-section">
                             <div class="title-heading">
                                 <div class="row">
@@ -159,3 +159,27 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+     
+    
+       const callPage = () => {
+        //    e.preventDefault();
+        $.ajax({
+            url: "profile.html",
+            type: "GET",
+            dataType: "text",
+            success: function(res) {
+                console.log('This page was loaded', res);
+                $("#page-append").html(res);
+            },
+            error: function(err) {
+                console.log("This page was not loaded", err);
+            },
+            complete: function(xhr, status) {
+                console.log("The requet is complete");
+            }
+        })
+       }
+   
+    
+</script>
