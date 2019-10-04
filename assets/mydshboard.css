@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Lato", sans-serif !important;
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding-right: 0 !important;
+     min-height: 555px !important;
+    background-color: #f1f1f1;
+  }
+
+  .convo-section{
+      padding: 20px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 10px;
+  }
+  .convo-section .icon-pack i.yellow{
+      color: #ffe921;
+  }
+.convo-section .icon-pack i{
+      font-size: 16px;
+  }
+
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: rgb(109, 111, 212);
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  .page-content {
+    margin: 0;
+    background-color: #e5e3e3;
+      min-height: 585px !important;
+  
+}
+
+.h6 {
+  float: right;
+}
+
+.controls .btn{
+    color: white;
+}
+
+.navbar-brand{
+    width:700px;
+    padding-left: 40px;
+}
+
+.input-group-btn{
+    border: 1px solid #ddd;
+}
+.input-group .form-control{
+    height: 40px;
+}
+
+.input-group{
+    width: 500px !important;
+    display: inline-block;
+    float: right;
+}
+
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+   

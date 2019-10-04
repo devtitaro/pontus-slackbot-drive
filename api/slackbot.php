@@ -5,6 +5,7 @@
  * 
  * Details: This file is part of the pontus slackbot file
  * Author: Ugbogu Justice
+ * Modified By: titaro
  *
  */
  
@@ -13,46 +14,15 @@
 session_start();
 
 // Lets include some important files here
+
+
 $dbname = "";
-$user = "";
-$host = "";
+$user = "root";
+$host = "localhost";
 $password = "";
 
-//checking server user credentials
-$link = new mysqli($host,$user,$password);
-if (!$link) {
-	die('Could not connect to the server: ' . mysqli_error($link));
-}
-//selecting db under server permission to check if database be can read and/or written to by the user
-$db_selected = mysqli_select_db($link, $dbname);
-if (!$db_selected) {
-	die('Database not Found in the server : ' . mysqli_error($link));
-}else{
-//making connection
-	$conn = mysqli_connect("$host", "$user", "$password", "$dbname");
-}
+$conn = mysqli_connect("$host", "$user", "$password", "$dbname");
 
-class error_report 
-{
-    public $error;
-    public $error1;
-
-    function __construct($error,$error1,$error2)
-    {
-        $this->error=$error;
-        $this->error1=$error1;
-        $this->error2=$error2;
-    }
-    function error(){
-        ini_set('display_errors', $this->error1);
-        ini_set('display_startup_errors', $this->error2);
-        error_reporting($this->error);
-    }
-}
-//setting up error[error_reporting,display_errors,display_startup_errors]
-// $error_reporting = new error_report(E_ALL,1,1);
-$error_reporting = new error_report(0,0,0);
-$error_reporting->error();
 // Database prefix
 define("PON_PREFIX","pon_");
 
@@ -127,9 +97,7 @@ function conversation($con_string,$tbl,$tbl_structure,$queryTable){
 	$con_string->query($queryTable);
 }
 
-function noSpecialCharacters($string) {
-   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-}
+
 //Get the request method.
 $requestType = $_SERVER['REQUEST_METHOD'];
 
@@ -183,8 +151,7 @@ function handle_post_request($tbl_users,$con_string,$tbl_users_email_column_name
             	$slack_user_id = $first_2;
             	
             	$conversation_key = trim(str_replace($first, "", $from_get));
-            	$conver = trim(str_replace("save my convo", "", $conversation_key));//obtained from bot once a message is made by slack user
-            	$conversation = noSpecialCharacters($conver);
+            	$conversation = trim(str_replace("save my convo", "", $conversation_key));//obtained from bot once a message is made by slack user
             
     
     //test
