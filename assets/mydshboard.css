@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -98,3 +99,39 @@ body {
     }
   }
    
+  /* Added By Joshua */
+  .image-upload i.fa-camera
+    {   
+        font-size: 20px;
+        cursor: pointer;
+        color: #6D6FD4;
+        /* float: right; */
+    }
+
+    .image-upload > input
+    {
+        display: none;
+    }
+    .btn-purple{
+      background: #6D6FD4 !important;
+      color: #fff !important;
+    }
+    .input-group-text{
+      background: #6D6FD4 !important;
+      border-radius: 50% !important;
+      color: #fff !important;
+      width: 40px !important;
+      height: 40px !important;
+    }
+
+    /* ================= Hiding and Showing the input box  ================*/
+    .h-input{
+      background: transparent !important;
+      border: none !important;
+    }
+    .h-input:focus{
+      box-shadow: none !important;
+    }
+  
+
+  /* End of styling */
