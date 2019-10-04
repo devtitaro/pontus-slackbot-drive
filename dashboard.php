@@ -63,13 +63,13 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
 
         <div class="row">
             <div class="sidebar col-lg-2">
-                <a class="active" href="#home"><?php echo ucfirst($username); ?></a>
+                <a class="active" href="#homeLink" onclick="showConversation()" id="homeLink"><?php echo ucfirst($username); ?></a>
                 <a href="dashboard.php">Conversations</a>
-                <a href="profile.html">Profile Settings</a>
+                <a href="javascript:;" onclick="showProfile()" id="profileLink">Profile Settings</a>
                 <a href="logout.php">Log Out</a>
             </div>
 
-            <div class="page-content col-lg-10  d-flex justify-content-center">
+            <div class="page-content col-lg-10  d-flex justify-content-center" id="page-append">
                 <div class="col-sm-9">
                     <div class="p-4">
                         <h4>Recent Conversations</h4>
@@ -197,4 +197,58 @@ $('#case_hole').hide();
 $('#show').click(function(){
     $('#case_hole').slideToggle();
 });
+
+    // functionality added to profile by Joshua
+    const showProfile = () => {
+        //    e.preventDefault();
+        $.ajax({
+            url: "profile.html",
+            type: "GET",
+            dataType: "text",
+            success: function(res) {
+                console.log('This page was loaded', res);
+                $("#page-append").html(res);
+                $("#homeLink").removeClass("active");
+                $("#dashboardLink").removeClass("active");
+                $("#profileLink").addClass("active");
+            },
+            error: function(err) {
+                console.log("This page was not loaded", err);
+            },
+            complete: function(xhr, status) {
+                console.log("The requet is complete");
+            }
+        })
+       }
+       const showConversation = () => {
+        $("#homeLink").removeClass("active");
+                $("#homeLink").addClass("active");
+                $("#profileLink").removeClass("active");
+        //    e.preventDefault();
+        // $.ajax({
+        //     url: "conversation.html",
+        //     type: "GET",
+        //     dataType: "text",
+        //     success: function(res) {
+        //         console.log('This page was loaded', res);
+        //         $("#page-append").html(res);
+        //         $("#homeLink").removeClass("active");
+        //         $("#dashboardLink").addClass("active");
+        //         $("#profileLink").removeClass("active");
+        //     },
+        //     error: function(err) {
+        //         console.log("This page was not loaded", err);
+        //     },
+        //     complete: function(xhr, status) {
+        //         console.log("The requet is complete");
+        //     }
+        // })
+       }
+       const showInput = () => {
+           $("input").removeClass("h-input");
+           $("input").removeAttr("readonly");
+           $("button[type='submit']").removeClass("d-none");
+
+      
+       }
 </script>
