@@ -29,7 +29,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
 $id = $_GET['id'];
 $table = "pon_convo";
 // querying the database
-$q = $db->query("SELECT * FROM $table WHERE WHERE `cid` = '$id'");
+$q = $db->query("SELECT * FROM $table WHERE  `cid` = '$id'");
 
 // fetching row from database
 while($row = $db->fetch_array($q))
@@ -102,8 +102,9 @@ while($row = $db->fetch_array($q))
                                     $convo = $_POST['conversation'];
                                     $table = "pon_convo";
 
-                                    if(!empty(mysqli_real_escape_string($convo))){
-                                        $query = "UPDATE $table SET user_conversation='$convo' WHERE `cid` = '$id'";
+                                    if(!empty($convo)){
+                                        $convo_clean = mysqli_real_escape_string($convo);
+                                        $query = "UPDATE $table SET `user_conversation`='$convo_clean' WHERE `cid` = '$id'";
 
                                        
                                         if ($db->query($query)) {
