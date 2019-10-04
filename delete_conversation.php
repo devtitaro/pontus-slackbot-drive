@@ -9,11 +9,12 @@
 
 // Lets include some important files here
 require_once 'sys/Main.php';
-
+$table = "pon_convo";
 if($_GET['id']){
 	$id = $_GET['id'];
-	$sql = "DELETE FROM ".PON_PREFIX."convo WHERE cid = '$id'";
-	mysqli_query($db, "$sql");
+	$sql = "DELETE FROM $table WHERE `cid` = '$id'";
+	$db->query($sql);
+	
 }
 
 header("location: dashboard.php");
