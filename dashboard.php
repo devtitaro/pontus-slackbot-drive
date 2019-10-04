@@ -224,6 +224,7 @@ $('#show').click(function(){
         $("#homeLink").removeClass("active");
                 $("#homeLink").addClass("active");
                 $("#profileLink").removeClass("active");
+                location.reload();
         //    e.preventDefault();
         // $.ajax({
         //     url: "conversation.html",
