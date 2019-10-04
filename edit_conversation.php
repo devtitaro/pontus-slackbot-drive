@@ -103,7 +103,7 @@ while($row = $db->fetch_array($q))
                                     $table = "pon_convo";
 
                                     if(!empty($convo)){
-                                        $convo_clean = mysqli_real_escape_string($convo);
+                                        $convo_clean = mysqli_real_escape_string($db, $convo);
                                         $query = "UPDATE $table SET `user_conversation`='$convo_clean' WHERE `cid` = '$id'";
 
                                        
