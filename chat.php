@@ -69,9 +69,9 @@ $chat_tbl_structure = "CREATE TABLE IF NOT EXISTS `$tbl_chat` (
     PRIMARY KEY (`id`)
   ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
 $db->query($chat_tbl_structure);
-$insert_param = ["Preparing your workspace",  "Welcome ". $username.",  I am your helper. Just type Help."];
 
-$db->query("INSERT INTO $tbl_chat(`bot`, `human`, `date`, `status`) VALUES('$insert_param[0]', '$insert_param[1]', now(), 1)");
+
+
 
 $tbl_conversations = PON_PREFIX."convo";//conversations_table_name_here
 $tbl_conversations_id_name = "cid";//conversations_table id column name here
