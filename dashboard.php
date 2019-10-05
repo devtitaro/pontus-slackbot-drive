@@ -52,14 +52,12 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
             </div>
 
             <div class="input-group">
-                <form method="POST" action="">
                 <input type="text" class="form-control" placeholder="Search Coversations.." name="search">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button" name="submit_search">
                         <span class="fa fa-search"></span>
                     </button>
                 </span>
-                </form>
             </div>
         </div>
 
