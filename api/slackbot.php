@@ -48,6 +48,7 @@ $users_tbl_structure = "CREATE TABLE IF NOT EXISTS `$tbl_users` (
 	  PRIMARY KEY (`id`)
 	) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1";
 $conn->query($users_tbl_structure);
+$conn->query("ALTER TABLE $tbl_conversations MODIFY $tbl_conversations_conversation_column_name LONGTEXT");
 
 function verifyUrl($token){
 
