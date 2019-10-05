@@ -76,9 +76,7 @@ class bot
 			$this->mysqli->query("DELETE  FROM $this->tbl");
 			return ["Cleaning the Workspace...","Welcome ".$this->username.", I am your helper. Just type Help"];
 		}elseif(strpos($this->test, $this->keys[1]) !== false){
-				
-			return ["Obtaining help options...","Type Clear to clean up this workspace, Type help to get the list of things you could do here, Type /Del  to view delete conversation modes based on date range. e.g: /Del"];
-			
+			return ["Obtaining help options...","Type Clear to clean up this workspace. Type help to get the list of things you could do here. Type Jot followed by what you want to save here. e.g: Jot This is my first conversation. Type /Del  to view delete conversation modes based on date range. e.g: /Del"];
 		}elseif(strpos($this->test, $this->keys[2]) !== false){
 				return ['none',"You could type Delx-five-years-ago. This would delete conversation made five years ago. Use this format for weeks, days, months and years. To Delete all then type D-All or D-today"];
 		}elseif(strpos($this->test, $this->keys[3]) !== false){
@@ -145,6 +143,18 @@ class bot
 			}else{
 				return  ["none","Nothing to process, Follow the format given to you when you type help. E.g D-today"];
 			}
+		}elseif(strpos($this->test, $this->keys[6]) !== false){
+
+			$text = str_replace("jot", "", $this->test);
+			$text_n = str_replace("Jot", "", $text);
+			$text_o = str_replace("JOT", "", $text_n);
+			$clean_text = trim(mysqli_real_escape_string($this->mysqli, $text_o));
+			if (!empty($clean_text)) {
+				 $this->mysqli->query("INSERT INTO $this->tbl_con(`user_convo`, `user_conversation`) VALUES('$this->email','$clean_text')");
+				return  ["Saving Conversation ...", $this->username." Your conversation was saved, kindly refresh the conversation page"];
+			}else{
+				return  ["none","Nothing to process. e.g: Jot This is my first conversation"];
+			}	
 		}else{
 			return  ["none","Nothing to process, Type Help to begin"];
 		}
@@ -188,7 +198,7 @@ $tbl = trim($split[0]);
 $username = trim($split[1]);
 $email = trim($split[2]);
 $tbl_conversation = trim($split[3]);
-$bot_request = new bot($db, $msg, $tbl, $tbl_conversation, $email, $username, ["clear","help","/del","d-all","delx","d-today"]);
+$bot_request = new bot($db, $msg, $tbl, $tbl_conversation, $email, $username, ["clear","help","/del","d-all","delx","d-today","jot"]);
 $bot = $bot_request->chat();
 
 if (!empty($bot[0]) OR !empty($bot[1])) {
