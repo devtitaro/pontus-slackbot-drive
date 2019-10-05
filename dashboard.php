@@ -174,7 +174,7 @@ You don’t have to worry about loosing important data and conversations, with P
         </div>
 
 <?php include 'chat.php'; ?>
-<button id="show" style="">Chat</button>
+<button id="show" style="">Open Chat</button>
 </body>
 </html>
 
@@ -192,8 +192,16 @@ You don’t have to worry about loosing important data and conversations, with P
             }, 2000);
 });
 $('#case_hole').hide();
+
 $('#show').click(function(){
-    $('#case_hole').slideToggle();
+    var link = $(this);
+    $('#case_hole').slideToggle('slow', function() {
+        if ($(this).is(':visible')) {
+             link.text('Close Chat');                
+        } else {
+             link.text('Open Chat');                
+        }        
+    });       
 });
 
     // functionality added to profile by Joshua
