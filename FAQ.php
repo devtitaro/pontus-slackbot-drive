@@ -7,8 +7,15 @@
         <title>Pontus Slackbot FAQ</title>
     </head>
     <body align="left">
-        <font face="candara", size="3.5">
-            <header class="top-header" role="banner">
+
+        <link href="https://fonts.googleapis.com/css?family=Hind:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="assets/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4293d2f86e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <font face="candara" size="3.5">
+<header class="top-header" role="banner">
     <div class="navbar ">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -22,7 +29,12 @@
                     <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
                     <li class="nav-item"><a href="login.php" class="nav-link">Login</a> </li>
                     <li class="nav-item"><a href="register.php" class="nav-link">Sign up</a> </li>
-                     <li class="nav-item"><a href="about.php" class="nav-link">About us</a> </li>
+                    <li class="nav-item"><a href="about.php" class="nav-link">About us</a> </li>
+                    <li class="nav-item"><a href="FAQ.php" class="nav-link">FAQ</a> </li>
+                </ul>
+            </div>
+        </div>
+</header>
          
             <br/>
            <div class="grid">
