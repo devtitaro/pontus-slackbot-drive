@@ -7,6 +7,7 @@
  * Author: @officialozioma
  * Modified By: @titaro
  * Modified By: @Josef
+ * Modified By: @Bringforthjoy
  *
  */
 
@@ -24,6 +25,8 @@ if (isset($_SESSION)) {
 if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
     header("location: login.php");
 }
+
+
 
 ?>
 

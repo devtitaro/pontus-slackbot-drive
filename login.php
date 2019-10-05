@@ -1,3 +1,12 @@
+<?php
+    require_once "google_config.php";
+	if (isset($_SESSION['access_token'])) {
+		header('Location: dashboard.php');
+		exit();
+	}
+	$loginURL = $gClient->createAuthUrl();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +14,41 @@
     <link href="assets/signUp.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Hind:600&display=swap" rel="stylesheet">
     <link href="assets/style.css" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    input,
+    .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 40px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+    }
+
+    input:hover,
+    .btn:hover {
+    opacity: 1;
+    color: white;
+    }
+    
+    .google {
+    background-color: #dd4b39;
+    color: white;
+    }
+
+
+    
+    </style>
     <title>Pontus Drive SlackBot</title>
+    
 
 </head>
 <body>
@@ -75,6 +117,14 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" name="submit"  class="btn btn-primary btn-block">Sign In</button>
+                </div>
+                <div>
+                    <center><h4>OR</h4></center>
+                </div>
+                <div>
+                    <a href="<?php echo $loginURL ?>" class="google btn">
+                    <i class="fa fa-google fa-fw"></i> Sign In with Google+
+                    </a>
                 </div>
                 <hr class="styled-hr">
                 <div class="" align="center">
