@@ -76,7 +76,7 @@ class bot
 			$this->mysqli->query("DELETE  FROM $this->tbl");
 			return ["Cleaning the Workspace...","Welcome ".$this->username.", I am your helper. Just type Help"];
 		}elseif(strpos($this->test, $this->keys[1]) !== false){
-			return ["Obtaining help options...","Type Clear to clean up this workspace. Type help to get the list of things you could do here. Type Jot followed by what you want to save here. e.g: Jot This is my first conversation. Type /Del  to view delete conversation modes based on date range. e.g: /Del"];
+			return ["Obtaining help options...","Type Clear to clean up this workspace. Type help to get the list of things you could do here. Type Jot followed by what you want to save here. e.g: Jot This is my first conversation. Type /Del  to view delete conversation modes based on date range."];
 		}elseif(strpos($this->test, $this->keys[2]) !== false){
 				return ['none',"You could type Delx-five-years-ago. This would delete conversation made five years ago. Use this format for weeks, days, months and years. To Delete all then type D-All or D-today"];
 		}elseif(strpos($this->test, $this->keys[3]) !== false){
