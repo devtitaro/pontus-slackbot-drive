@@ -108,7 +108,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
                                         <div class="spacer"></div>
                                     </div>
                                     <div class="col-lg-3 icon-pack" align="right"> <?php
-                                        echo '<a href="edit_conversation.php?id='.$id.'" title="edit conversation" class="">Edit</a>';
+                                        echo '<a href="edit_conversation.php?id='.$id.'" title="edit conversation" class=""><i class="fa fa-edit" style="color:blue;"></i></a>&nbsp;&nbsp;';
                                         echo '<a href="delete_conversation.php?id='.$id.'" title="delete conversation" class=""><i class="fa fa-trash"></i></a>'; 
                                         ?>
                                     </div>
@@ -174,7 +174,7 @@ You don’t have to worry about loosing important data and conversations, with P
         </div>
 
 <?php include 'chat.php'; ?>
-<button id="show" style="">Open Chat</button>
+<button id="show" style="">Chat</button>
 </body>
 </html>
 
@@ -192,16 +192,8 @@ You don’t have to worry about loosing important data and conversations, with P
             }, 2000);
 });
 $('#case_hole').hide();
-
 $('#show').click(function(){
-    var link = $(this);
-    $('#case_hole').slideToggle('slow', function() {
-        if ($(this).is(':visible')) {
-             link.text('Close Chat');                
-        } else {
-             link.text('Open Chat');                
-        }        
-    });       
+    $('#case_hole').slideToggle();
 });
 
     // functionality added to profile by Joshua

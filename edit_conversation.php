@@ -24,6 +24,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
 }
 
 ?>
+
 <?php
 // getting the query string id from the dashboard page
 $id = $_GET['id'];
@@ -99,12 +100,12 @@ while($row = $db->fetch_array($q))
                                 <?php
                                 if(isset($_POST['msg'])){
                                     $id = $_POST['id'];
-                                    $convo = $_POST['conversation'];
+                                    $convo = stripslashes(htmlentities($_POST['conversation']));
                                     $table = "pon_convo";
 
                                     if(!empty($convo)){
-                                        $convo_clean = mysqli_real_escape_string($db, $convo);
-                                        $query = "UPDATE $table SET `user_conversation`='$convo_clean' WHERE `cid` = '$id'";
+                                        //$convo_clean = mysqli_real_escape_string($db, trim($convo));
+                                        $query = "UPDATE $table SET `user_conversation`='$convo' WHERE `user_convo` = '$email' && `cid` = '$id'";
 
                                        
                                         if ($db->query($query)) {
@@ -119,7 +120,7 @@ while($row = $db->fetch_array($q))
                                     } 
                                 }
                                 ?>
-                                <form action="edit_conversation.php" method="post">
+                                <form action="edit_conversation.php" method="post" id="convo_edit" onsubmit="return validate()">
                                 <input name="id" type="hidden" value="<?php echo $id; ?>">
                                 <div class="form-group">
                                     <label for="myconversation"><h5>Edit conversation</h5></label>
@@ -153,7 +154,15 @@ while($row = $db->fetch_array($q))
 </body>
 </html>
 
-
+<script type="text/javascript">
+function validate() {
+    var x = document.forms["convo_edit"]["myconversation"].value;
+    if (x == "") {
+        alert("Field can not be left empty!!");
+        return false;
+    }
+}
+</script>
 <script type="text/javascript" src="assets/jquery-3.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
