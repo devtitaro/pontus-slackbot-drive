@@ -26,7 +26,17 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
     header("location: login.php");
 }
 
+if (isset($_POST['submit_search'])) {
+    $search = $_POST['search'];
 
+    $q_search = $db->query("SELECT * FROM " . PON_PREFIX . "convo WHERE user_convo = '$email' AND user_conversation LIKE '%$search%'  ORDER BY cid DESC");
+    if ($q_search) {
+               
+        if ($q_search->num_rows > 0) {
+           $_SESSION['search'] = true;
+        }
+    }
+}
 
 ?>
 
@@ -53,12 +63,14 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
             </div>
 
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search Coversations.." name="search">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" name="submit_search">
-                        <span class="fa fa-search"></span>
-                    </button>
-                </span>
+                <form method="POST" action="">
+                    <input type="text" class="form-control" placeholder="Search Coversations.." name="search" style="position: absolute;">
+                    <span class="input-group-btn" style="position: relative;">
+                        <button class="btn btn-default" type="submit" name="submit_search">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </span>
+                </form>
             </div>
         </div>
 
@@ -81,7 +93,53 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
 
                     <div class="row">
 <?php
-                           
+if (isset($_SESSION['search'])?$_SESSION['search']:'' === true) {
+     while ($row = $db->fetch_array($q_search)) {
+                $conversation = str_replace($search, "<span style='color:green;font-size:20px;'>$search</span>", $row['user_conversation']);
+                $time = $row['convo_time'];
+                $id = $row['cid'];
+                  ?>
+                            
+                               
+                            
+                        <div class="convo-section">
+                            <div class="title-heading">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <h5><span class="fa fa-clock-o"> </span> <?php
+
+                                // Display user slack conversation
+                                echo '<p>';
+                                echo $time;?></h5>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="col-lg-3 icon-pack" align="right"> <?php
+                                        echo '<a href="edit_conversation.php?id='.$id.'" title="edit conversation" class=""><i class="fa fa-edit" style="color:blue;"></i></a>&nbsp;&nbsp;';
+                                        echo '<a href="delete_conversation.php?id='.$id.'" title="delete conversation" class=""><i class="fa fa-trash"></i></a>'; 
+                                        ?>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="convo-text">
+                                <p><?php
+
+                                // Display user slack conversation
+                                echo '<p>';
+                                echo $conversation;?></p>
+
+                            </div>
+                            <hr>
+                            
+
+                        </div>
+                        <?php
+            }
+            unset($_SESSION['search']);
+}else{
+
                         $q = $db->query("SELECT * FROM " . PON_PREFIX . "convo WHERE user_convo = '$email' ORDER BY cid DESC");
                        
                         if ($q->num_rows>0) {
@@ -161,7 +219,10 @@ You don’t have to worry about loosing important data and conversations, with P
 
                         </div><?php
                         }
-                        ?>
+                        
+}
+
+       ?>
                         
                     </div>
 
