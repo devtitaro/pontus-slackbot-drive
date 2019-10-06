@@ -32,7 +32,7 @@
                     <li class="nav-item"><a href="register.php" class="nav-link">Sign up</a> </li>
                     <li class="nav-item"><a href="about.php" class="nav-link">About us</a> </li>
                     <li class="nav-item"><a href="FAQ.php" class="nav-link">FAQ</a> </li>
-                    <li class="nav-item"><a href="howitwors.php" class="nav-link">How It Works</a> </li>
+                    <li class="nav-item"><a href="howitworks.php" class="nav-link">How It Works</a> </li>
                 </ul>
             </div>
         </div>
