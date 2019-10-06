@@ -261,13 +261,17 @@ echo $id;
 					$imageNewName = $username . "  " .$imageActualExt;
 					$imageDestination = 'uploadImages/'. $imageNewName;
 					move_uploaded_file($imageTmpName, $imageDestination);
-                    $updateImage = $db->query("UPDATE user SET photo = '$imageDestination' WHERE id ='$uid'");
-                    $imageSelect = $db->query("SELECT photo FROM user WHERE id = '$uid'");
+		    $table = PON_PREFIX.'user';
+		    $db->query("ALTER TABLE $table ADD facebook varchar(255) NOT NULL");
+		    $db->query("ALTER TABLE $table ADD twitter varchar(255) NOT NULL");
+		    $db->query("ALTER TABLE $table ADD photo varchar(200) NOT NULL");
+                    $updateImage = $db->query("UPDATE $table SET photo = '$imageDestination' WHERE uid ='$uid'");
+                    $imageSelect = $db->query("SELECT photo FROM $table WHERE uid = '$uid'");
                     // Getting the image Row from database
                     $imageRow = $db->fetch_array($imageSelect); // This will later be echoed at top
 
                     // Updating the user details
-                    $updateUserDetail = $db->query("UPDATE user SET email = '$em', facebook = '$fb', twitter = '$tw' WHERE id ='$uid'");
+                    $updateUserDetail = $db->query("UPDATE $table SET email = '$em', facebook = '$fb', twitter = '$tw' WHERE uid ='$uid'");
 
                     if($updateUserDetail) {
                         echo "<script> You have successfully Updated your details :) </script>";
