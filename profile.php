@@ -90,7 +90,18 @@ if (isset($_POST['submit_search'])) {
 
         <div class="row" >
         <div class="col-lg-3 col-sm-12">
-            <img src="https://via.placeholder.com/200x180" alt="" class="rounded-cirle" width="200px" height="180px">
+		<?php
+		
+		if(isset($imageRow) && !empty($imageRow))
+		{
+                 echo '<img src="https://pontus-slackbot.herokuapp.com/{$imageRow}" alt="" class="rounded-cirle" width="200px" height="180px">';
+		}
+		 else
+		 {
+                  echo '<img src="https://via.placeholder.com/200x180" alt="" class="rounded-cirle" width="200px" height="180px">';
+		 }
+		
+		?>
             <form method="post">
             <div class="image-upload">
                 <label for="file-input">
