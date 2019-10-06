@@ -40,108 +40,69 @@
             </div>
 
             <div class="page-content col-lg-10  d-flex justify-content-center" id="page-append">
-                <div class="col-sm-9">
-                    <div class="p-4">
-                        <h4>Recent Conversations</h4>
-                        <hr>
-                    </div>
+               
+<div class="col-sm-9">
+        <div class="p-4">
+            <h4>Profile Settings</h4>
+            <hr>
+        </div>
 
-                    <div class="row" >
-                        <div class="convo-section">
-                            <div class="title-heading">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <h5><span class="fa fa-clock-o"> </span> Oct 01, 2019.</h5>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="spacer"></div>
-                                    </div>
-                                    <div class="col-lg-3 icon-pack" align="right">
-                                        <i class="fa fa-trash"></i>
-                                    </div>
-                                </div>
-                                <br>
-                            </div>
-                            <div class="convo-text">
-                                <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="row" >
+        <div class="col-lg-3 col-sm-12">
+            <img src="https://via.placeholder.com/200x180" alt="" class="rounded-cirle">
+            <div class="image-upload">
+                <label for="file-input">
+                <i class="fa fa-camera"></i>
+                </label>
 
-                            </div>
-                            <hr>
-                            <div class="controls" align="right">
-                                <a href="" class="btn btn-warning">Add to favourites</a>
-                            </div>
-
-                        </div>
-                        <div class="convo-section">
-                            <div class="title-heading">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <h5><span class="fa fa-clock-o"> </span> Oct 01, 2019.</h5>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="spacer"></div>
-                                    </div>
-                                    <div class="col-lg-3 icon-pack" align="right">
-                                        <i class="fa fa-trash"></i>
-                                    </div>
-                                </div>
-                                <br>
-                            </div>
-                            <div class="convo-text">
-                                <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-                            </div>
-                            <hr>
-                            <div class="controls" align="right">
-                                <a href="" class="btn btn-warning">Add to favourites</a>
-                            </div>
-
-                        </div>
-                        <div class="convo-section">
-                            <div class="title-heading">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <h5><span class="fa fa-clock-o"> </span> Oct 01, 2019.</h5>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="spacer"></div>
-                                    </div>
-                                    <div class="col-lg-3 icon-pack" align="right"
-                                        <i class="fa fa-trash"></i>
-                                    </div>
-                                </div>
-                                <br>
-                            </div>
-                            <div class="convo-text">
-                                <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-                            </div>
-                            <hr>
-                            <div class="controls" align="right">
-                                <a href="" class="btn btn-warning">Add to favourites</a>
-                            </div>
-
-                        </div>
-                    </div>
+                <input id="file-input" type="file"/>
+          </div>
+            <h5 class="mt-3">Olajide Joshua</h5>
+            <p>Syntax</p>
+            <button class="btn btn-purple form-control" onclick="showInput()">Edit Profile</button>
+        </div> 
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="details">
+            
 
 
-
+                <div class="input-group  mb-2 ">
+                    <div class="input-group-prepend rounded-circle">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i> </span>
                 </div>
+                    <input type="text" class="form-control h-input" value="olajidejoshua4real@gmail.com" readonly>
+                    </div>
+
+            <div class="input-group  mb-2 ">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-facebook"></i> </span>
+        </div>
+            <input type="text" class="form-control h-input" value="my facebook username" readonly>
+            </div>
+            <div class="input-group  mb-2 ">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-google"></i> </span>
+        </div>
+            <input type="text" class="form-control h-input" value="holajidejoshua4real@gmail.com" readonly/>
+            </div>
+            <div class="input-group  mb-2 ">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-twitter"></i> </span>
+        </div>
+            <input type="text" class="form-control h-input" value="https://twitter.com/olatojoshua" readonly>
+            
+            </div>
+            <div class="input-group">
+            <button type="submit" class="btn btn-success d-none" id="saveBtn">SAVE</button>
+        </div>
+            
+        </div>
+        
+            </div>
+        </div>
+        </div>
+        </div>
+
 
             </div>
 
