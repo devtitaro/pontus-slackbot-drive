@@ -43,7 +43,7 @@
                     <div class="col-lg-6 mq-none">
                         <div class="text-box">
                             <div class="howimage">
-                                <img src="assets/images/how it works.jpg" width="100%">
+                                <img src="how it works.jpg" width="100%">
                             </div>
                         </div>
                     </div>
