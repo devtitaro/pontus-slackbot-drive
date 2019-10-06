@@ -65,7 +65,7 @@ if (isset($_POST['submit_search'])) {
             <div class="input-group">
                 <form method="POST" action="">
                     <input type="text" class="form-control" placeholder="Search Coversations.." name="search" style="position: absolute;">
-                    <span class="input-group-btn" style="position: relative;">
+                    <span class="input-group-btn" style="position: relative;left: 460px;">
                         <button class="btn btn-default" type="submit" name="submit_search">
                             <span class="fa fa-search"></span>
                         </button>
