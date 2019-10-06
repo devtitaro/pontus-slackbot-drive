@@ -81,11 +81,17 @@ body {
 }
 
   
-  @media screen and (max-width: 700px) {
+
+  
+ 
+@media screen and (max-width: 700px) {
     .sidebar {
       width: 100%;
       height: auto;
       position: relative;
+    }
+    .input-group-btn{
+      left: 400px !important;
     }
     .sidebar a {float: left;}
     div.content {margin-left: 0;}
@@ -95,6 +101,9 @@ body {
     .sidebar a {
       text-align: center;
       float: none;
+    }
+    .input-group-btn{
+      left: 200px !important;
     }
   }
    
