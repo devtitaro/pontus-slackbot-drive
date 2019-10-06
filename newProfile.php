@@ -1,83 +1,241 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
+<!DOCTYPE html>
+<html lang="html">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-    <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
-    
-    <link rel="stylesheet" href="assets/newProfile.css">
-    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HNG: SlackBot</title>
+    <link href="assets/mydshboard.css" rel="stylesheet">
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+
+
 </head>
-
-<body class="profile-page">
-    
-
-    
-    <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
-    <div class="main main-raised">
-		<div class="profile-content">
-            <div class="container">
-                <div class="row">
-	                <div class="col-md-6 ml-auto mr-auto">
-        	           <div class="profile">
-	                        <div class="avatar">
-	                            <img src="https://via.placeholder.com/150" alt="Joshua Olajide" class="img-raised rounded-circle img-fluid">
-	                        </div>
-	                        <div class="name">
-	                            <h3 class="title">Joshua Olajide</h3>
-								<h6>FrontEnd Dev</h6>
-								<a href="#" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-github"></i></a>
-	                        </div>
-	                    </div>
-    	            </div>
-                </div>
-                <div class="description text-center">
-                    <p>I a Frontend engineer and i am more passionate about problem solving </p>
-                </div>
-				<div class="row">
-					<div class="col-md-6 ml-auto mr-auto">
-                        <div class="profile-tabs">
-                          <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-                           
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#favorite" role="tab" data-toggle="tab">
-                                  <i class="material-icons">favorite</i>
-                                    Favorite Mesages
-                                </a>
-                            </li>
-                          </ul>
-                        </div>
-    	    	</div>
+<body>
+    <header class="top-header" role="banner">
+        <div class="navbar navbar-expand-lg">
+            <div class="navbar-brand">
+                <h2>Pontus Drive</h2>
             </div>
-        
-          <div class="tab-content ">
-           
-            <div class="text-center" id="favorite">
-      			<div class="row">
-      				<div class="col-md-12 ml-auto mr-auto ">
-      				 <h3 class="mt-4 mb-5">All favourite messages goes here</h3>
-      			    </div>
-                      
-                      
-      			</div>
-      		</div>
-          </div>
 
-        
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Coversations..">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <span class="fa fa-search"></span>
+                    </button>
+                </span>
             </div>
         </div>
-	</div>
-	
 
-    
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    </header>
+
+        <div class="row" >
+            <div class="sidebar col-lg-2">
+                <a class="active" href="#home" onclick="showDashboard()" id="homeLink">My Dashboard</a>
+                <a href="javascript:;" onclick="showConversation()" id="dashboardLink">Conversations</a>
+                <a href="javascript:;" onclick="showProfile()" id="profileLink">Profile Settings</a>
+                <a href="logout.html">Log Out</a>
+            </div>
+
+            <div class="page-content col-lg-10  d-flex justify-content-center" id="page-append">
+                <div class="col-sm-9">
+                    <div class="p-4">
+                        <h4>Recent Conversations</h4>
+                        <hr>
+                    </div>
+
+                    <div class="row" >
+                        <div class="convo-section">
+                            <div class="title-heading">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <h5><span class="fa fa-clock-o"> </span> Oct 01, 2019.</h5>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="col-lg-3 icon-pack" align="right">
+                                        <i class="fa fa-trash"></i>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="convo-text">
+                                <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                            </div>
+                            <hr>
+                            <div class="controls" align="right">
+                                <a href="" class="btn btn-warning">Add to favourites</a>
+                            </div>
+
+                        </div>
+                        <div class="convo-section">
+                            <div class="title-heading">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <h5><span class="fa fa-clock-o"> </span> Oct 01, 2019.</h5>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="col-lg-3 icon-pack" align="right">
+                                        <i class="fa fa-trash"></i>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="convo-text">
+                                <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                            </div>
+                            <hr>
+                            <div class="controls" align="right">
+                                <a href="" class="btn btn-warning">Add to favourites</a>
+                            </div>
+
+                        </div>
+                        <div class="convo-section">
+                            <div class="title-heading">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <h5><span class="fa fa-clock-o"> </span> Oct 01, 2019.</h5>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="col-lg-3 icon-pack" align="right"
+                                        <i class="fa fa-trash"></i>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="convo-text">
+                                <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                            </div>
+                            <hr>
+                            <div class="controls" align="right">
+                                <a href="" class="btn btn-warning">Add to favourites</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
 
 </body>
+</html>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+     
+    
+       const showProfile = () => {
+        //    e.preventDefault();
+        $.ajax({
+            url: "profile.php",
+            type: "GET",
+            dataType: "text",
+            success: function(res) {
+                console.log('This page was loaded', res);
+                $("#page-append").html(res);
+                $("#homeLink").removeClass("active");
+                $("#dashboardLink").removeClass("active");
+                $("#profileLink").addClass("active");
+            },
+            error: function(err) {
+                console.log("This page was not loaded", err);
+            },
+            complete: function(xhr, status) {
+                console.log("The requet is complete");
+            }
+        })
+       }
+
+       const showConversation = () => {
+        $("#homeLink").removeClass("active");
+                $("#dashboardLink").addClass("active");
+                $("#profileLink").removeClass("active");
+        //    e.preventDefault();
+        // $.ajax({
+        //     url: "conversation.html",
+        //     type: "GET",
+        //     dataType: "text",
+        //     success: function(res) {
+        //         console.log('This page was loaded', res);
+        //         $("#page-append").html(res);
+        //         $("#homeLink").removeClass("active");
+        //         $("#dashboardLink").addClass("active");
+        //         $("#profileLink").removeClass("active");
+        //     },
+        //     error: function(err) {
+        //         console.log("This page was not loaded", err);
+        //     },
+        //     complete: function(xhr, status) {
+        //         console.log("The requet is complete");
+        //     }
+        // })
+       }
+
+       const showDashboard = () => {
+        $("#homeLink").addClass("active");
+                $("#dashboardLink").removeClass("active");
+                $("#profileLink").removeClass("active");
+        //    e.preventDefault();
+        // $.ajax({
+        //     url: "conversation.html",
+        //     type: "GET",
+        //     dataType: "text",
+        //     success: function(res) {
+        //         console.log('This page was loaded', res);
+        //         $("#page-append").php(res);
+        //         $("#homeLink").addClass("active");
+        //         $("#dashboardLink").removeClass("active");
+        //         $("#profileLink").removeClass("active");
+        //     },
+        //     error: function(err) {
+        //         console.log("This page was not loaded", err);
+        //     },
+        //     complete: function(xhr, status) {
+        //         console.log("The requet is complete");
+        //     }
+        // })
+       }
+
+       const showInput = () => {
+           $("input").removeClass("h-input");
+           $("input").removeAttr("readonly");
+           $("button[type='submit']").removeClass("d-none");
+
+      
+       }
+       
+   
+    
+</script>
