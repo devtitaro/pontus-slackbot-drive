@@ -27,10 +27,11 @@
 
             <div class="navbar-collapse collapse offset" id="navbar">
                 <ul class="nav navbar-nav justify-content-end">
-                    <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
+                     <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
                     <li class="nav-item"><a href="login.php" class="nav-link">Login</a> </li>
                     <li class="nav-item"><a href="register.php" class="nav-link">Sign up</a> </li>
                     <li class="nav-item"><a href="about.php" class="nav-link">About us</a> </li>
+                    <li class="nav-item"><a href="FAQ.php" class="nav-link">FAQ</a> </li>
                 </ul>
             </div>
         </div>
@@ -48,51 +49,25 @@
                     </div>
                     <div class="col-lg-6 col-md-8 col-sm-12" align="center">
                         <div>
-                            <ul>
-                                <h3>
-                                    STEP 1 
-                                </h3>
-                                <P>
-                                   Register on pontus-slackbot.herokuapp.com 
-                                </P>
-                                <h3>
-                
-                                    STEP 2
-                                </h3>
-                                <P>
-                                        Type @pontus in the your slack channel or Dm
-                                     </P>     STEP 2
-                                </h3>
-                                <P>
-                                        Type @pontus in the your slack channel or Dm
-                                     </P>
-                                     <h3>
-                                         STEP 3
-                                     </h3>
-                                             <p>
-                                               Type @pontus save- add your message
-                                             </p>
-                                             <h3>
-                                                 STEP 4
-                                             </h3>
-                                             <p>
-                                                Your messeage will be saved inside the pontus external driver
-                                             </p>
-                                             <h3>
-                                                 STEP 5
-                                             </h3>
-                                             <p>
-                                                    Login into your pontus account to see all your saved messages and information from slack
-                                             </p>
-                                             
-                                     
+                           <h3>STEP 1 </h3>
+                           <P>Register on Pontus-slackbot.herokuapp.com</P>
+                           <h3>STEP 2 </h3>
+                           <p>Type @pontus in the your slack channel or Dm </p>
+                           <h3> STEP 3</h3>
+                           <p>Type @pontus in the your slack channel or Dm</p>
+                           <h3>STEP 4</h3>
+                           <p>Type @pontus save- add your message</p>
+                           <h3>STEP 5</h3>
+                           <p>Your messeage will be saved inside the pontus external driver</p>
+                           <h3>STEP 6</h3>
+                           <p> Login into your pontus account to see all your saved messages and information from slack</p>
+
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script></html>
 
-
-
-
-                    
-                    	
-
+                                
+                
+                                    
+                          
