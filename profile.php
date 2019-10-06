@@ -1,3 +1,43 @@
+<?php
+
+/**
+ * Pontus Slackbot
+ *
+ * Details: This file is part of the pontus slackbot file
+ * Author: @Syntax
+ *
+ */
+
+// Lets include some important files here
+require_once 'sys/Main.php';
+
+// Start sessions
+session_start();
+
+if (isset($_SESSION)) {
+    $username = $_SESSION["username"];
+    $email = $_SESSION["email"];
+}
+
+if (!isset($_SESSION["email"]) || !isset($_SESSION["username"])) {
+    header("location: login.php");
+}
+
+if (isset($_POST['submit_search'])) {
+    $search = $_POST['search'];
+
+    $q_search = $db->query("SELECT * FROM " . PON_PREFIX . "convo WHERE user_convo = '$email' AND user_conversation LIKE '%$search%'  ORDER BY cid DESC");
+    if ($q_search) {
+               
+        if ($q_search->num_rows > 0) {
+           $_SESSION['search'] = true;
+        }
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="html">
 <head>
@@ -57,8 +97,8 @@
 
                 <input id="file-input" type="file"/>
           </div>
-            <h5 class="mt-3">Olajide Joshua</h5>
-            <p>Syntax</p>
+            <h5 class="mt-3"><?php echo ucfirst($username); ?></h5>
+            
             <button class="btn btn-purple form-control" onclick="showInput()">Edit Profile</button>
         </div> 
         <div class="col-lg-9 col-md-9 col-sm-12">
@@ -70,7 +110,7 @@
                     <div class="input-group-prepend rounded-circle">
                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i> </span>
                 </div>
-                    <input type="text" class="form-control h-input" value="olajidejoshua4real@gmail.com" readonly>
+                    <input type="text" class="form-control h-input" value="<?php echo ucfirst($email); ?>" readonly>
                     </div>
 
             <div class="input-group  mb-2 ">
@@ -79,11 +119,7 @@
         </div>
             <input type="text" class="form-control h-input" value="my facebook username" readonly>
             </div>
-            <div class="input-group  mb-2 ">
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-google"></i> </span>
-        </div>
-            <input type="text" class="form-control h-input" value="holajidejoshua4real@gmail.com" readonly/>
+            
             </div>
             <div class="input-group  mb-2 ">
             <div class="input-group-prepend">
