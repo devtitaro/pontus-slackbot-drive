@@ -15,6 +15,7 @@ require_once 'sys/Main.php';
 session_start();
 
 if (isset($_SESSION)) {
+    $uid = $_SESSION['uid'];
     $username = $_SESSION["username"];
     $email = $_SESSION["email"];
 }
@@ -76,7 +77,7 @@ if (isset($_POST['submit_search'])) {
                 <a class="" href="dashboard.php"  id="homeLink">My Dashboard</a>
                 <a href="javascript:;" onclick="showConversation()" id="dashboardLink">Conversations</a>
                 <a href="profile.php" class="active" onclick="showProfile()" id="profileLink">Profile Settings</a>
-                <a href="logout.html">Log Out</a>
+                <a href="logout.php">Log Out</a>
             </div>
 
             <div class="page-content col-lg-10  d-flex justify-content-center" id="page-append">
@@ -89,35 +90,34 @@ if (isset($_POST['submit_search'])) {
 
         <div class="row" >
         <div class="col-lg-3 col-sm-12">
-            <img src="https://via.placeholder.com/200x180" alt="" class="rounded-cirle">
+            <img src="https://via.placeholder.com/200x180" alt="" class="rounded-cirle" width="200px" height="180px">
+            <form method="post">
             <div class="image-upload">
                 <label for="file-input">
                 <i class="fa fa-camera"></i>
                 </label>
 
-                <input id="file-input" type="file"/>
+                <input id="file-input" type="file" name="photo"/>
           </div>
             <h5 class="mt-3"><?php echo ucfirst($username); ?></h5>
             
             <button class="btn btn-purple form-control" onclick="showInput()">Edit Profile</button>
         </div> 
         <div class="col-lg-9 col-md-9 col-sm-12">
+        
             <div class="details">
-            
-
-
                 <div class="input-group  mb-2 ">
                     <div class="input-group-prepend rounded-circle">
                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i> </span>
                 </div>
-                    <input type="text" class="form-control h-input" value="<?php echo ucfirst($email); ?>" readonly>
+                    <input type="text" class="form-control h-input" value="<?php echo ucfirst($email); ?>" readonly name="email" required>
                     </div>
 
             <div class="input-group  mb-2 ">
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-facebook"></i> </span>
         </div>
-            <input type="text" class="form-control h-input" value="my facebook username" readonly>
+            <input type="text" class="form-control h-input" value="my facebook username" readonly name="facebook" required>
             </div>
             
             </div>
@@ -125,15 +125,15 @@ if (isset($_POST['submit_search'])) {
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-twitter"></i> </span>
         </div>
-            <input type="text" class="form-control h-input" value="https://twitter.com/olatojoshua" readonly>
+            <input type="text" class="form-control h-input" value="https://twitter.com/olatojoshua" readonly name="twitter" required>
             
             </div>
             <div class="input-group">
-            <button type="submit" class="btn btn-success d-none" id="saveBtn">SAVE</button>
+            <button type="submit" class="btn btn-success d-none" id="saveBtn" name="saveBtn">SAVE</button>
         </div>
             
         </div>
-        
+        </form>
             </div>
         </div>
         </div>
@@ -236,3 +236,48 @@ if (isset($_POST['submit_search'])) {
    
     
 </script>
+
+<?php
+echo $id;
+    if (isset($_POST['saveBtn'])) {
+            $em = $_POST['email'];
+            $fb = $_POST['facebook'];
+            $tw = $_POST['twitter'];
+
+                // Image upload / Update code here
+
+                $userPassport = $_FILES['photo'];
+                $imageName = $_FILES['photo']['name'];
+                $imageTmpName = $_FILES['photo']['tmp_name'];
+                $imageError = $_FILES['photo']['error'];
+                $imageSize = $_FILES['photo']['size'];
+                $imageType = $_FILES['photo']['type'];
+                $imageExt = explode('.', $imageName);
+                $imageActualExt = strtolower(end($imageExt));
+                $allowedExt = array("jpg","jpeg","png");
+		if (in_array($imageActualExt, $allowedExt)) {
+			if ($imageError === 0) {
+				if ($imageSize <= 150000) {
+					$imageNewName = $username . "  " .$imageActualExt;
+					$imageDestination = 'uploadImages/'. $imageNewName;
+					move_uploaded_file($imageTmpName, $imageDestination);
+                    $updateImage = $db->query("UPDATE user SET photo = '$imageDestination' WHERE id ='$uid'");
+                    $imageSelect = $db->query("SELECT photo FROM user WHERE id = '$uid'");
+                    // Getting the image Row from database
+                    $imageRow = $db->fetch_array($imageSelect); // This will later be echoed at top
+
+                    // Updating the user details
+                    $updateUserDetail = $db->query("UPDATE user SET email = '$em', facebook = '$fb', twitter = '$tw' WHERE id ='$uid'");
+
+                    if($updateUserDetail) {
+                        echo "<script> You have successfully Updated your details :) </script>";
+                    }
+
+
+    }
+    }
+}
+    }
+
+
+?>
