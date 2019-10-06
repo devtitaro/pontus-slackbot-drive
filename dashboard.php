@@ -80,7 +80,7 @@ if (isset($_POST['submit_search'])) {
             <div class="sidebar col-lg-2">
                 <a class="active" href="#homeLink" onclick="showConversation()" id="homeLink"><?php echo ucfirst($username); ?></a>
                 <a href="dashboard.php">Conversations</a>
-                <a href="javascript:;" onclick="showProfile()" id="profileLink">Profile Settings</a>
+                <a href="profile.php" onclick="showProfile()" id="profileLink">Profile Settings</a>
                 <a href="logout.php">Log Out</a>
             </div>
 

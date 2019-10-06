@@ -33,7 +33,7 @@
 
         <div class="row" >
             <div class="sidebar col-lg-2">
-                <a class="active" href="#home" onclick="showDashboard()" id="homeLink">My Dashboard</a>
+                <a class="dashboard.php" href="#home" onclick="showDashboard()" id="homeLink">My Dashboard</a>
                 <a href="javascript:;" onclick="showConversation()" id="dashboardLink">Conversations</a>
                 <a href="javascript:;" onclick="showProfile()" id="profileLink">Profile Settings</a>
                 <a href="logout.html">Log Out</a>
