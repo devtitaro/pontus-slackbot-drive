@@ -48,21 +48,22 @@
        
 <div class="fixedwidth">
 <div class="contactform">
-    <form name="contact-form">
+    <form action=""  name="contact-form">
       <table >
         <tr>
           <td valign="top">
             <label for ="name"></label>
           </td>
            <td valign="top"">
-               <input type ="text""name="name" maxlength="50" placeholder="Name" size="25">
+               <input type ="text""name="name" maxlength="50" minlength="6" required placeholder="Name" size="25">
            </td>
         </tr>
          <td valign="top">
              <label for ="email"></label>
          </td>
           <td valign="top"">
-           <input type ="text""name="email" maxlength="80" placeholder="Email Address" size="25">
+           <input type ="email""name="email" maxlength="80" required placeholder="Email Address" size="25"> 
+          
           </td>
          </tr>
          <tr>
@@ -70,7 +71,7 @@
              <label for ="comments"></label>
           </td>
            <td valign="top">
-            <textarea name="comments" maxlength="1000" cols="25" placeholder="Type here..." rows="6"></textarea>
+            <textarea name="comments" maxlength="1000" minlength="20" cols="25" placeholder="Type here..." rows="6" required ></textarea>
            </td>
           </tr>
       
@@ -93,10 +94,15 @@ Phone No: +234 0009998887
 Email :pontusdrive@gmail.com</p>
      <br>
      <hr>
-     <h4 align="center">Contact Us</h4>
+     <h4 align="center">Contact Us Today!</h4>
 </div>
 
 </div>
+        <div class="col-lg-5">
+            <div class="img-block">
+                <img src="assets/images/bg-master.png" width="100%">
+            </div>
+        </div>
 
 
 
