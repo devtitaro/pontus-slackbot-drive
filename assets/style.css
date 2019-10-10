@@ -288,7 +288,7 @@ body{
 table{
     padding-left: 25px;
 }
-input[type=text],textarea
+input[type=text],[type=email],textarea
 {
     padding:5px;
     resize:vertical;
@@ -318,4 +318,7 @@ hr{
     border-width: 2px;
     display:block;
     color:black;
+}
+.address{
+    margin:40px;
 }
