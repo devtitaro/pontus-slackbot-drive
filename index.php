@@ -33,6 +33,7 @@
                     <li class="nav-item"><a href="about.php" class="nav-link">About us</a> </li>
                     <li class="nav-item"><a href="FAQ.php" class="nav-link">FAQ</a> </li>
                     <li class="nav-item"><a href="howitworks.php" class="nav-link">How It Works</a> </li>
+                    <li class="nav-item"><a href="contactus.php" class="nav-link">Contact Us</a> </li>
                 </ul>
             </div>
         </div>

@@ -285,3 +285,40 @@ body{
 
 
 }
+table{
+    padding-left: 25px;
+}
+input[type=text],[type=email],textarea
+{
+    padding:5px;
+    resize:vertical;
+    margin:6px;
+    width:400px;
+    margin-right: 80px;
+}
+input[type=submit]
+{
+    padding: 5px; 
+    border-radius: 4px;
+    margin-left: 5px;
+
+
+}
+.contacthead{
+    margin:40px;
+}
+.contactform{
+    float:left;
+}
+.fixedwidth{
+        width:1000px;
+        margin:0 auto;
+}
+hr{
+    border-width: 2px;
+    display:block;
+    color:black;
+}
+.address{
+    margin:40px;
+}
